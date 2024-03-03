@@ -3,9 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    oldpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     home-manager.url = "github:nix-community/home-manager";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    darwinpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "darwinpkgs";
     nix-on-droid = {
       url = "github:t184256/nix-on-droid/release-23.05";
       inputs.nixpkgs.follows = "oldpkgs";
